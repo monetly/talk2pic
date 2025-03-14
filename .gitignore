@@ -10,7 +10,7 @@
 .snapshots/
 #Testing Output folder
 .output/
-/talk2pic/image/
+/image/
 /test/
 #Extension App-file
 *.app
