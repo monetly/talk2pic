@@ -65,12 +65,3 @@ class sd:
             print("Model has been released and memory cleared.")
         else:
             print("No model to release.")
-        
-
-if __name__=='__main__':
-    sd = sd("ruler")
-    model_id="/home/dictmanage/.cache/modelscope/hub/models/tensorart/stable-diffusion-3.5-medium-turbo/"
-    sd.load_model(model_id)
-    sd.batch_generated_pic("word.txt")
-    
-    sd.release_model()

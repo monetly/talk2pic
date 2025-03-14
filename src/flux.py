@@ -78,12 +78,3 @@ class flux:
             print("No model to release.")
         
 
-if __name__=='__main__':
-    sd = flux("ruler")
-    model_id="/home/dictmanage/.cache/modelscope/hub/models/tensorart/stable-diffusion-3.5-medium-turbo/"
-    model_id1="/home/dictmanage/.cache/modelscope/hub/models/black-forest-labs/FLUX.1-dev/"
-    adapter_id = "/home/dictmanage/.cache/modelscope/hub/models/yiwanji/FLUX_xiao_hong_shu_ji_zhi_zhen_shi_V2/"
-    Child_Il="/home/dictmanage/.cache/modelscope/hub/models/lip421/ertongchahuaMAILANDFLUX/"
-    sd.load_model(model_id1,Child_Il)
-    sd.generated_pic('how are you my friend')
-    sd.release_model()

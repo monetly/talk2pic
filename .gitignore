@@ -10,6 +10,8 @@
 .snapshots/
 #Testing Output folder
 .output/
+/talk2pic/image/
+/test/
 #Extension App-file
 *.app
 #Rapid Application Development File
