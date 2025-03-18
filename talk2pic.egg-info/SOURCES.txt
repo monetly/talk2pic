@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+llm/__init__.py
+llm/deepseek.py
+llm/llm.py
+llm/qwen.py
+src/__init__.py
+src/flux.py
+src/sd.py
+src/trans.py
+talk2pic.egg-info/PKG-INFO
+talk2pic.egg-info/SOURCES.txt
+talk2pic.egg-info/dependency_links.txt
+talk2pic.egg-info/top_level.txt
+tests/__init__.py
+tests/test.py
