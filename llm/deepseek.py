@@ -30,7 +30,7 @@ class deepseek(lm):
             self.client = OpenAI(api_key=self.key,base_url=self.url)
     def call_llm(self,seed:str):
         response = self.client.chat.completions.create(
-            model='deepseek/QwQ-32B',
+            model='',
             messages=[
                 {"role": "system", "content": "You are now my assistant, and your task is to describe, in as much detail as possible, the potential scene of the dialogue I'm about to send you, using the following format: Character status, Action/Emotion, Environment Setting, Illustration Style, Color Palette. The scene description must be specific and accurate, avoiding vague terms and providing clear details. Answer in English. You don't need to send your response in the format provided; simply connect the content corresponding to each format and send it to me. Limit your response to 80 tokens."},
                 {"role": "user", "content": seed},
@@ -58,7 +58,7 @@ class vdeepseek(deepseek):
     def evaluate_image(self, prompt:str,image_path):
         set_image(image_path)
         response = self.client.chat.completions.create(
-        model="deepseek/deepseek2-VL-72B-Instruct",
+        model="",
         messages=[
         {
             "role": "user",
@@ -88,7 +88,7 @@ class vdeepseek(deepseek):
     def refine_prompt(self, old_prompt):
 
         response = self.client.chat.completions.create(
-            model="deepseek/deepseek2-VL-72B-Instruct",
+            model="",
             messages=[
             {"role": "system", "content": [{"type": "text", "text": "Your task is to refine an image generation prompt to fix errors and improve accuracy. Given the prompt and a list of detected issues, generate an improved version of the prompt while keeping the original intent intact."}]},
             {"role": "user", "content": [{"type": "image_url", "image_url": {"url": self.image}}, {"type": "text", "text": f"Original prompt: {old_prompt}\\nDetected issues: Incorrect hands, unnatural lighting, incorrect text, distorted perspective. Improve the prompt to avoid these issues."}]}
@@ -99,6 +99,6 @@ class vdeepseek(deepseek):
         return response.choices[0].message.content.strip()
 
 if __name__=="__main__":
-    b=deepseek("sk-qzvagazrsjcgrkqfmynotwtovonbqxcrfhmgpleutfovldgo")
+    b=deepseek("")
     print(b.call_llm("hello you man"))
 
